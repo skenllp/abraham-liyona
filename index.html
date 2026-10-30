@@ -25,6 +25,7 @@
   <meta name="twitter:image" content="https://abraham-liyona.vercel.app/assets/og.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/hero.jpg">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Great+Vibes&display=swap"
     rel="stylesheet">
@@ -701,11 +702,12 @@
 
     .names-row {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 22px;
+      gap: 14px;
       margin-top: 46px;
-      flex-wrap: wrap;
+      text-align: center;
     }
 
     .name-block {
@@ -731,8 +733,12 @@
     .names-row .amp-mini {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: var(--gold);
+      line-height: 1;
+      text-align: center;
+      display: block;
+      margin: 4px auto;
     }
 
     /* ============ DATE (save the date) ============ */
@@ -1098,6 +1104,10 @@
 
       .gallery-grid figure:nth-child(5)::before {
         animation-delay: 4.8s;
+      }
+
+      .gallery-grid figure:nth-child(6)::before {
+        animation-delay: 6s;
       }
     }
 
@@ -1603,8 +1613,8 @@
     <!-- HERO -->
     <section id="hero">
       <div class="parallax-layer" data-parallax="0.18">
-        <div class="hero-bg hero-fill" style="background-image:url('assets/hero.png');"></div>
-        <div class="hero-bg hero-full" style="background-image:url('assets/hero.png');"></div>
+        <div class="hero-bg hero-fill" style="background-image:url('assets/hero.jpg');"></div>
+        <div class="hero-bg hero-full" style="background-image:url('assets/hero.jpg');"></div>
       </div>
       <div class="glow g1"></div>
       <div class="glow g2"></div>
@@ -1741,7 +1751,7 @@
       </div>
     </section>
 
-    <!-- ENGAGEMENT -->
+    <!-- BETROTHAL -->
     <section id="betrothal" class="event-section section">
       <svg class="corner-floral tl" viewBox="0 0 150 150">
         <use href="#sprig" />
@@ -1752,7 +1762,7 @@
       <div class="section-inner reveal">
         <div class="event-card">
           <div class="eyebrow">You Are Cordially Invited To The</div>
-          <h2 class="serif" style="margin-bottom:12px;">Engagement Of</h2>
+          <h2 class="serif" style="margin-bottom:12px;">Betrothal Of</h2>
           <div class="serif" style="font-size:clamp(1.35rem,4.6vw,1.7rem);line-height:1.35;margin-bottom:26px;color:var(--ink);"><strong style="font-weight:600;">Abraham S Pattara</strong><br><span style="font-style:italic;color:var(--gold);">&amp;</span><br><strong style="font-weight:600;">Liyona Anna Mathew</strong></div>
           <div class="event-meta">
             <div class="row">
@@ -1762,7 +1772,7 @@
               </svg>
               <span>Sunday, December 27, 2026 &nbsp;·&nbsp; 11:30 AM</span>
             </div>
-            <div class="eyebrow" style="margin-bottom:-6px;">Engagement Venue</div>
+            <div class="eyebrow" style="margin-bottom:-6px;">Betrothal Venue</div>
             <div class="row venue">St. Thomas Syro Malabar Forane Church<br>Anakkara</div>
           </div>
           <a class="map-btn"
@@ -1862,16 +1872,22 @@
         <div class="gallery-title reveal reveal-d1">A Glimpse of Our Story</div>
         <div class="gallery-grid">
           <figure class="reveal reveal-d1">
-            <img src="assets/1.png" alt="Abraham and Liyona — moment 1" loading="lazy">
+            <img src="assets/1.jpg" alt="Abraham and Liyona — moment 1" loading="lazy" decoding="async">
           </figure>
           <figure class="reveal reveal-d2">
-            <img src="assets/2.png" alt="Abraham and Liyona — moment 2" loading="lazy">
+            <img src="assets/2.jpg" alt="Abraham and Liyona — moment 2" loading="lazy" decoding="async">
           </figure>
           <figure class="reveal reveal-d1">
-            <img src="assets/3.png" alt="Abraham and Liyona — moment 3" loading="lazy">
+            <img src="assets/3.jpg" alt="Abraham and Liyona — moment 3" loading="lazy" decoding="async">
           </figure>
           <figure class="reveal reveal-d2">
-            <img src="assets/hero.png" alt="Abraham and Liyona" loading="lazy">
+            <img src="assets/4.jpg" alt="Abraham and Liyona — moment 4" loading="lazy" decoding="async">
+          </figure>
+          <figure class="reveal reveal-d1">
+            <img src="assets/5.jpg" alt="Abraham and Liyona — moment 5" loading="lazy" decoding="async">
+          </figure>
+          <figure class="reveal reveal-d2">
+            <img src="assets/hero.jpg" alt="Abraham and Liyona" loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
@@ -1905,7 +1921,7 @@
   </div>
 
   <!-- WEDDING SONG -->
-  <audio id="wedding-song" loop preload="auto" src="assets/music.mp3"></audio>
+  <audio id="wedding-song" loop preload="none" src="assets/music.mp3"></audio>
 
   <!-- MUSIC TOGGLE -->
   <button id="music-toggle" class="muted" type="button" aria-label="Toggle wedding song" title="Play song">
